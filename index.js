@@ -4,6 +4,7 @@ const app = express()
 const bodyParser = require('body-parser')
 const cors = require('cors')
 
+app.use(express.static('build'))
 app.use(cors())
 app.use(bodyParser.json())
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms - :post'))
@@ -36,6 +37,7 @@ let persons = [
 ]
 
 app.get('/', (request, response) => {
+
     response.send('<h1>Tää vitun puhelinluettelo part1231234514</h1>')
 })
 
